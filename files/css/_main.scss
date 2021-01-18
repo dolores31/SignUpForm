@@ -1,13 +1,16 @@
-.main {
-  width: 100%;
-  height: 100%;
+.body-bg {
   background: $pink url(../images/bg-intro-desktop.png) no-repeat;
   background-size: cover;
-  padding: 7% 10%;
-
+  @media only screen and (max-width: 767px) {
+    background: $pink url(../images/bg-intro-mobile.png) no-repeat;
+    background-size: cover;
+  }
+}
+.main {
   &__container {
     display: flex;
     flex-wrap: wrap;
+    padding: 5% 10%;
   }
 
   &__about {
@@ -15,12 +18,14 @@
     flex: 1 0 50%;
     display: flex;
     align-items: center;
+    &-wrapper {
+      padding-right: 15%;
+    }
     &-header {
-      font-size: $font-lg;
+      font-size: $font-xlg;
       margin-top: 0px;
     }
     &-description {
-      font-size: $font-md;
       padding-right: 50px;
     }
   }
@@ -29,10 +34,10 @@
     flex: 1 0 50%;
     .try-button {
       background-color: $purple;
-      font-size: $font-md;
+      font-size: $font-sm;
       color: $white;
       text-align: center;
-      padding: 30px;
+      padding: 25px;
       border-radius: 5px;
       box-shadow: 0px 8px $grayOpacity;
       margin-bottom: 30px;
@@ -42,18 +47,18 @@
     }
     .signup {
       background-color: $white;
-      padding: 55px;
+      padding: 40px;
       border-radius: 5px;
       box-shadow: 0px 8px $grayOpacity;
       .field-wrap {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         input {
           width: 100%;
-          padding: 20px 30px;
+          padding: 25px 30px;
           border: 1px solid $lightGray;
           border-radius: 5px;
           font-family: $font-family-main;
-          font-size: $font-sm;
+          font-size: $font-default;
           font-weight: 500;
         }
       }
@@ -86,12 +91,54 @@
     }
   }
 
+  @media only screen and (max-width: 1440px) {
+    &__about {
+      &-wrapper {
+        padding-right: 5%;
+      }
+    }
+  }
+
   @media only screen and (max-width: 767px) {
+    &__container {
+      padding: 100px 30px;
+      text-align: center;
+    }
     &__about {
       flex: 1 0 100%;
+      &-wrapper {
+        padding-right: 0px;
+      }
+      &-header {
+        font-size: $font-lg;
+      }
+      &-description {
+        padding-right: 0px;
+      }
     }
     &__form {
       flex: 1 0 100%;
+      margin-top: 50px;
+      .try-button{
+        padding: 25px 60px;
+        font-size: $font-default;
+      }
+      .signup {
+        padding: 25px;
+        .field-wrap {
+          input {
+            padding: 20px 25px;
+          }
+        }
+        .submit-button {
+          padding: 20px;
+          font-size: $font-default;
+        }
+
+        .terms {
+          padding: 0 15px;
+        }
+      }
     }
   }
 }
