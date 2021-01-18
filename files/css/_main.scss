@@ -1,0 +1,42 @@
+.main {
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: $pink url(../images/bg-intro-desktop.png) no-repeat;
+  background-size: cover;
+  padding: 10%;
+
+  &__container {
+    display: flex;
+  }
+
+  &__about {
+    color: $white;
+    flex: 1 0 50%;
+    &-header {
+      font-size: $font-lg;
+    }
+    &-description {
+      font-size: $font-md;
+      padding-right: 50px;
+    }
+  }
+
+  &__form {
+    flex: 1 0 50%;
+    .try-button {
+      background-color: $purple;
+      font-size: $font-md;
+      color: $white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 5px $grayLight;
+      margin-bottom: 23px;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
