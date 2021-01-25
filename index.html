@@ -1,75 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="files/images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="files/images/favicon-32x32.png">
+    <title>Frontend Mentor | Intro component with sign up form</title>
 
-  <title>Frontend Mentor | Intro component with sign up form</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="files/css/styles.css" />
+  </head>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="files/css/styles.css">
+  <body class="body-bg">
+    <main class="main">
+      <div class="main__container">
+        <div class="main__about">
+          <div class="main__about-wrapper">
+            <h1 class="main__about-header">Learn to code by watching others</h1>
+            <p class="main__about-description">
+              See how experienced developers solve problems in real-time.
+              Watching scripted tutorials is great, but understanding how
+              developers think is invaluable.
+            </p>
+          </div>
+        </div>
+        <div class="main__form">
+          <div class="try-button">
+            <span>Try it free 7 days</span>
+            then $20/mo. thereafter
+          </div>
 
-</head>
+          <form id="signup" action="" method="post" novalidate>
+            <div class="field-wrap">
+              <input
+                type="text"
+                name="First Name"
+                id="firstName"
+                placeholder="First Name"
+                required
+                autocomplete="off"
+              /><span class="error" aria-live="polite"></span>
+            </div>
 
-<body class="body-bg">
-  <main class="main">
-    <div class="main__container">
-      <div class="main__about">
-        <div class="main__about-wrapper">
-          <h1 class="main__about-header">
-            Learn to code by watching others
-          </h1>
-          <p class="main__about-description">
-            See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but
-            understanding how developers think is invaluable.
-          </p>
+            <div class="field-wrap">
+              <input
+                type="text"
+                name="Last Name"
+                id="lastName"
+                placeholder="Last Name"
+                required
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="field-wrap">
+              <input
+                type="email"
+                name="Email Address"
+                id="email"
+                placeholder="Email Address"
+                required
+                autocomplete="off"
+              />
+              <span class="error" aria-live="polite"></span>
+            </div>
+
+            <div class="field-wrap">
+              <input
+                type="password"
+                name="Password"
+                id="password"
+                placeholder="Password"
+                required
+                autocomplete="off"
+              />
+            </div>
+
+            <button class="submit-button" type="submit" id="submit">
+              Claim your free trial
+            </button>
+
+            <span class="terms"
+              >By clicking the button, you are agreeing to our
+              <a href="#">Terms and Services</a></span
+            >
+          </form>
         </div>
       </div>
-      <div class="main__form">
-        <div class="try-button">
-          <span>Try it free 7 days</span>
-          then $20/mo. thereafter
-        </div>
+    </main>
 
-        <form class="signup" action="" method="post">
-          <div class="field-wrap">
-            <input type="text" name="First Name" id="first-name" placeholder="First Name" required autocomplete="off">
-          </div>
+    <footer class="footer">
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Dolores Suico</a>.
+      </p>
+    </footer>
 
-          <div class="field-wrap">
-            <input type="text" name="Last Name" id="last-name" placeholder="Last Name" required autocomplete="off">
-          </div>
-
-          <div class="field-wrap">
-            <input type="email" name="Email Address" id="email" placeholder="Email Address" required autocomplete="off">
-          </div>
-
-          <div class="field-wrap">
-            <input type="password" name="Password" id="password" placeholder="Password" required autocomplete="off">
-          </div>
-
-          <button class="submit-button" type="submit">Claim your free trial</button>
-
-          <span class="terms">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></span>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Dolores Suico</a>.
-    </p>
-  </footer>
-
-  <script src="files/js/script.js"></script>
-</body>
-
+    <script src="files/js/script.js"></script>
+  </body>
 </html>

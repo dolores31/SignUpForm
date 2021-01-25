@@ -45,7 +45,7 @@
         font-weight: 600;
       }
     }
-    .signup {
+    #signup {
       background-color: $white;
       padding: 40px;
       border-radius: 5px;
@@ -119,11 +119,11 @@
     &__form {
       flex: 1 0 100%;
       margin-top: 50px;
-      .try-button{
+      .try-button {
         padding: 25px 60px;
         font-size: $font-default;
       }
-      .signup {
+      #signup {
         padding: 25px;
         .field-wrap {
           input {

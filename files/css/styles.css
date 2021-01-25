@@ -92,7 +92,7 @@ a {
   font-weight: 600;
 }
 
-.main__form .signup {
+.main__form #signup {
   background-color: #ffffff;
   padding: 40px;
   border-radius: 5px;
@@ -100,11 +100,11 @@ a {
           box-shadow: 0px 8px rgba(62, 60, 73, 0.4);
 }
 
-.main__form .signup .field-wrap {
+.main__form #signup .field-wrap {
   margin-bottom: 20px;
 }
 
-.main__form .signup .field-wrap input {
+.main__form #signup .field-wrap input {
   width: 100%;
   padding: 25px 30px;
   border: 1px solid #b9b6d3;
@@ -114,7 +114,7 @@ a {
   font-weight: 500;
 }
 
-.main__form .signup .submit-button {
+.main__form #signup .submit-button {
   font-family: "Poppins", sans-serif;
   background-color: #38cc8c;
   font-size: 1.125rem;
@@ -132,7 +132,7 @@ a {
   cursor: pointer;
 }
 
-.main__form .signup .terms {
+.main__form #signup .terms {
   display: block;
   text-align: center;
   font-size: 0.75rem;
@@ -140,7 +140,7 @@ a {
   font-weight: 500;
 }
 
-.main__form .signup .terms a {
+.main__form #signup .terms a {
   color: #ff7a7a;
 }
 
@@ -179,17 +179,17 @@ a {
     padding: 25px 60px;
     font-size: 1rem;
   }
-  .main__form .signup {
+  .main__form #signup {
     padding: 25px;
   }
-  .main__form .signup .field-wrap input {
+  .main__form #signup .field-wrap input {
     padding: 20px 25px;
   }
-  .main__form .signup .submit-button {
+  .main__form #signup .submit-button {
     padding: 20px;
     font-size: 1rem;
   }
-  .main__form .signup .terms {
+  .main__form #signup .terms {
     padding: 0 15px;
   }
 }
