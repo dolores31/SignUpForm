@@ -1,51 +1,117 @@
 "use strict";
 
+/* https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript */
+
 const form = document.getElementById("signup");
+
+const firstName = document.getElementById("firstName");
+const firstNameError = document.querySelector("#firstName + span.error");
+
+const lastName = document.getElementById("lastName");
+const lastNameError = document.querySelector("#lastName + span.error");
 
 const email = document.getElementById("email");
 const emailError = document.querySelector("#email + span.error");
 
-email.addEventListener("input", function (event) {
-  // Each time the user types something, we check if the
-  // form fields are valid.
+const password = document.getElementById("password");
+const passwordError = document.querySelector("#password + span.error");
 
-  if (email.validity.valid) {
-    // In case there is an error message visible, if the field
-    // is valid, we remove the error message.
-    emailError.textContent = ""; // Reset the content of the message
-    emailError.className = "error"; // Reset the visual state of the message
+firstName.addEventListener("input", function () {
+  if (firstName.validity.valid) {
+    firstNameError.textContent = "";
+    firstName.className = "valid";
+    firstNameError.className = "error";
   } else {
-    // If there is still an error, show the correct error
-    showError();
+    firstNameShowError();
+  }
+});
+
+lastName.addEventListener("input", function () {
+  if (lastName.validity.valid) {
+    lastNameError.textContent = "";
+    lastName.className = "valid";
+    lastNameError.className = "error";
+  } else {
+    lastNameShowError();
+  }
+});
+
+email.addEventListener("input", function () {
+  if (email.validity.valid) {
+    emailError.textContent = "";
+    email.className = "valid";
+    emailError.className = "error";
+  } else {
+    emailShowError();
+  }
+});
+
+password.addEventListener("input", function () {
+  if (password.validity.valid) {
+    passwordError.textContent = "";
+    password.className = "valid";
+    passwordError.className = "error";
+  } else {
+    passwordShowError();
   }
 });
 
 form.addEventListener("submit", function (event) {
-  // if the email field is valid, we let the form submit
-
+  if (!firstName.validity.valid) {
+    firstNameShowError();
+    event.preventDefault();
+  }
+  if (!lastName.validity.valid) {
+    lastNameShowError();
+    event.preventDefault();
+  }
   if (!email.validity.valid) {
-    // If it isn't, we display an appropriate error message
-    showError();
-    // Then we prevent the form from being sent by canceling the event
+    emailShowError();
+    event.preventDefault();
+  }
+  if (!password.validity.valid) {
+    passwordShowError();
     event.preventDefault();
   }
 });
 
-function showError() {
-  if (email.validity.valueMissing) {
-    // If the field is empty
-    // display the following error message.
-    emailError.textContent = "You need to enter an e-mail address.";
-  } else if (email.validity.typeMismatch) {
-    // If the field doesn't contain an email address
-    // display the following error message.
-    emailError.textContent = "Entered value needs to be an e-mail address.";
-  } else if (email.validity.tooShort) {
-    // If the data is too short
-    // display the following error message.
-    emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+function firstNameShowError() {
+  if (firstName.validity.valueMissing) {
+    firstNameError.textContent = "First Name cannot be empty";
+  }
+  // Setting error styles
+  firstName.className = "error";
+  firstNameError.className = "error active";
+}
+
+function lastNameShowError() {
+  if (lastName.validity.valueMissing) {
+    lastNameError.textContent = "Last Name cannot be empty";
   }
 
-  // Set the styling appropriately
+  // Setting error styles
+  lastName.className = "error";
+  lastNameError.className = "error active";
+}
+
+function emailShowError() {
+  if (email.validity.valueMissing) {
+    emailError.textContent = "E-mail address cannot be empty";
+  } else if (email.validity.typeMismatch) {
+    emailError.textContent = "Looks like this is not an email";
+  }
+
+  // Setting error styles
+  email.className = "error";
   emailError.className = "error active";
+}
+
+function passwordShowError() {
+  if (password.validity.valueMissing) {
+    passwordError.textContent = "Password cannot be empty";
+  }
+
+  // Setting error styles
+  password.className = "error";
+  passwordError.className = "error active";
 }

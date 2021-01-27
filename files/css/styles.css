@@ -101,6 +101,7 @@ a {
 }
 
 .main__form #signup .field-wrap {
+  position: relative;
   margin-bottom: 20px;
 }
 
@@ -112,6 +113,51 @@ a {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 500;
+}
+
+.main__form #signup .field-wrap input.error {
+  border: 1px solid #ff7a7a;
+}
+
+.main__form #signup .field-wrap input.error::-webkit-input-placeholder {
+  color: #ff7a7a;
+}
+
+.main__form #signup .field-wrap input.error:-ms-input-placeholder {
+  color: #ff7a7a;
+}
+
+.main__form #signup .field-wrap input.error::-ms-input-placeholder {
+  color: #ff7a7a;
+}
+
+.main__form #signup .field-wrap input.error::placeholder {
+  color: #ff7a7a;
+}
+
+.main__form #signup .field-wrap span.error.active {
+  display: block;
+  color: #ff7a7a;
+  font-size: 12px;
+  font-style: italic;
+  text-align: right;
+  margin: 5px 0 20px;
+}
+
+.main__form #signup .field-wrap span.error.active:before {
+  content: "!";
+  display: block;
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+  background-color: #ff7a7a;
+  text-align: center;
+  width: 24px;
+  height: 23px;
+  border-radius: 50%;
+  right: 20px;
+  top: 30px;
 }
 
 .main__form #signup .submit-button {
