@@ -82,15 +82,15 @@
                 display: block;
                 position: absolute;
                 color: white;
-                font-size: 15px;
+                font-size: 17px;
                 font-style: normal;
                 background-color: $pink;
                 text-align: center;
-                width: 24px;
+                width: 23px;
                 height: 23px;
                 border-radius: 50%;
                 right: 20px;
-                top: 30px;
+                top: 28px;
               }
             }
           }
@@ -167,7 +167,7 @@
             &.error {
               &.active {
                 &:before {
-                  top: 23px;
+                  top: 22px;
                 }
               }
             }
