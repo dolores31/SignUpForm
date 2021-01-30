@@ -16,63 +16,35 @@ const emailError = document.querySelector("#email + span.error");
 const password = document.getElementById("password");
 const passwordError = document.querySelector("#password + span.error");
 
-firstName.addEventListener("input", function () {
-  if (firstName.validity.valid) {
-    firstNameError.textContent = "";
-    firstName.className = "valid";
-    firstNameError.className = "error";
-  } else {
-    firstNameShowError();
-  }
-});
+function inputListener(input, inputError, inputShowError) {
+  input.addEventListener("input", function () {
+    if (input.validity.valid) {
+      inputError.textContent = "";
+      input.className = "valid";
+      inputError.className = "error";
+    } else {
+      inputShowError();
+    }
+  });
+}
 
-lastName.addEventListener("input", function () {
-  if (lastName.validity.valid) {
-    lastNameError.textContent = "";
-    lastName.className = "valid";
-    lastNameError.className = "error";
-  } else {
-    lastNameShowError();
-  }
-});
+inputListener(firstName, firstNameError, firstNameShowError);
+inputListener(lastName, lastNameError, lastNameShowError);
+inputListener(email, emailError, emailShowError);
+inputListener(password, passwordError, passwordShowError);
 
-email.addEventListener("input", function () {
-  if (email.validity.valid) {
-    emailError.textContent = "";
-    email.className = "valid";
-    emailError.className = "error";
-  } else {
-    emailShowError();
+function inputValidity(input, inputShowError, event) {
+  if (!input.validity.valid) {
+    inputShowError();
+    event.preventDefault();
   }
-});
-
-password.addEventListener("input", function () {
-  if (password.validity.valid) {
-    passwordError.textContent = "";
-    password.className = "valid";
-    passwordError.className = "error";
-  } else {
-    passwordShowError();
-  }
-});
+}
 
 form.addEventListener("submit", function (event) {
-  if (!firstName.validity.valid) {
-    firstNameShowError();
-    event.preventDefault();
-  }
-  if (!lastName.validity.valid) {
-    lastNameShowError();
-    event.preventDefault();
-  }
-  if (!email.validity.valid) {
-    emailShowError();
-    event.preventDefault();
-  }
-  if (!password.validity.valid) {
-    passwordShowError();
-    event.preventDefault();
-  }
+  inputValidity(firstName, firstNameShowError, event);
+  inputValidity(lastName, lastNameShowError, event);
+  inputValidity(email, emailShowError, event);
+  inputValidity(password, passwordShowError, event);
 });
 
 function firstNameShowError() {
