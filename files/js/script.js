@@ -33,20 +33,6 @@ inputListener(lastName, lastNameError, lastNameShowError);
 inputListener(email, emailError, emailShowError);
 inputListener(password, passwordError, passwordShowError);
 
-function inputValidity(input, inputShowError, event) {
-  if (!input.validity.valid) {
-    inputShowError();
-    event.preventDefault();
-  }
-}
-
-form.addEventListener("submit", function (event) {
-  inputValidity(firstName, firstNameShowError, event);
-  inputValidity(lastName, lastNameShowError, event);
-  inputValidity(email, emailShowError, event);
-  inputValidity(password, passwordShowError, event);
-});
-
 function firstNameShowError() {
   if (firstName.validity.valueMissing) {
     firstNameError.textContent = "First Name cannot be empty";
@@ -87,3 +73,17 @@ function passwordShowError() {
   password.className = "error";
   passwordError.className = "error active";
 }
+
+function inputValidity(input, inputShowError, event) {
+  if (!input.validity.valid) {
+    inputShowError();
+    event.preventDefault();
+  }
+}
+
+form.addEventListener("submit", function (event) {
+  inputValidity(firstName, firstNameShowError, event);
+  inputValidity(lastName, lastNameShowError, event);
+  inputValidity(email, emailShowError, event);
+  inputValidity(password, passwordShowError, event);
+});
